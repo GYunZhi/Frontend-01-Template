@@ -30,10 +30,6 @@
 
 ![](https://gongyz.oss-cn-shenzhen.aliyuncs.com/blog/20200413202831.png)
 
-#### 课后练习
-
-面向对象这个概念用**追溯法**写一篇博文
-
 ## 前端与工程体系
 
 ### 课程互动
@@ -56,7 +52,38 @@ winter眼中的优秀工程师
 
 活跃用户：日活/月活
 
-### 课后练习
+## 随堂作业
 
 封装一个URL 解析库
+
+```js
+// URL组成:
+// protocol :// hostname[:port] / path / [:parameters][?query]#hash
+// 协议://主机名[:端口]/ 路径/[:参数] [?查询]#哈希值
+// /https?\:\/\/ (\w+(?:\.\w+)+|localhost) (?:\:(\d{2,5}))? (\/(?:[^#?]+)?) (?:\?([^#]+))? (?:#{1}(.+))?/i
+
+/**
+ * 简单的 URL 解析函数
+ * @param {string} url 
+ */
+function parse (url) {
+  let reg =  /https?\:\/\/(\w+(?:\.\w+)+|localhost)(?:\:(\d{2,5}))?(\/(?:[^#?]+)?)(?:\?([^#]+))?(?:#{1}(.+))?/i
+  let result = url.match(reg)
+  console.log(result)
+  return {
+    href: result[0],
+    protocol: result[0].match(/https?/)[0],
+    host: result[1],
+    port: result[2] || '80',
+    pathname: result[3],
+    search: result[4] || null,
+    hash: result[5] || null,
+  }
+}
+
+
+// test
+let url = 'https://sub.host.com:8080/p/a/t/h?query=string#hash'
+console.log(parse(url))
+```
 
