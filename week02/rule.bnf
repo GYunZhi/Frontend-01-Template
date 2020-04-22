@@ -1,0 +1,25 @@
+# 使用 BNF(巴科斯诺尔范式) 编写一个加法
+
+<Number> = "0" | "1" | "2" | ... | "9"
+
+<DecimaNumber> = "0" | {{ "1" | "2" | ... | "9"} <Number>* }
+
+<Expression> = <DecimaNumber> | <DecimaNumber> "+" <DecimaNumber>
+
+
+
+# 使用 BNF(巴科斯诺尔范式) 编写带括号的四则运算产生式
+
+<Number> = "0" | "1" | "2" | ... | "9"
+
+# <Number> = /0\[1-9][0-9]* /
+
+<DecimalNumber> = "0" | {{ "1" | "2" | ... | "9"} <Number>* }
+
+<PrimaryExpression> = <DecimalNumber> | "(" <LogicalExpression> ")"
+
+<MultiplicativeExpression> = <DecimaNumber> | <MultiplicativeExpression> "*" <DecimalNumber> | <MultiplicativeExpression> "/" <DecimalNumber> | 
+
+<AdditiveExpression> = <MultiplicativeExpression> | <AdditiveExpression> "+" <MultiplicativeExpression> | <AdditiveExpression> "-" <MultiplicativeExpression> 
+
+<LogicalExpression> = <AdditiveExpression>  | <LogicalExpression> "||" <AdditiveExpression> | <LogicalExpression> "&&" <AdditiveExpression>
