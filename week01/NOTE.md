@@ -1,6 +1,6 @@
 # 第1周总结
 
-## 前端与学习方法
+## 学习方法
 
 ### 前端技能模型
 
@@ -30,7 +30,7 @@
 
 ![](https://gongyz.oss-cn-shenzhen.aliyuncs.com/blog/20200413202831.png)
 
-## 前端与工程体系
+## 工程体系
 
 ### 课程互动
 
@@ -50,9 +50,7 @@ winter眼中的优秀工程师
 
 ![](https://gongyz.oss-cn-shenzhen.aliyuncs.com/blog/20200411203121.png)
 
-活跃用户：日活/月活
-
-## 随堂作业
+### 课后作业
 
 封装一个URL 解析库
 
